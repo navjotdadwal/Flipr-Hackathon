@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NoPage from './pages/NoPage/noPage';
+import TopPage from './pages/TopPage/topPage';
+import AdminDashboard from './pages/AdminDashboard/adminDashboard';
+import AddEmployee from './pages/AddEmployee/addEmployee';
+import EmployeeDashboard from "./pages/EmployeeDashboard/employeeDashboard"; 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<TopPage />} />
+        <Route exact path="/admindash" element={<AdminDashboard />} />
+        <Route exact path="/employeedash" element={<EmployeeDashboard />} />
+        <Route exact path="/addemployee" element={<AddEmployee />} />
+        <Route exact path="*" element={<NoPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
