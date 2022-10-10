@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const OuterComponent = styled.div`
     background: linear-gradient(135deg, rgba(34,193,195,1) 0%,rgba(253,187,45,1) 100%);
     font-family: "work sans";
-    padding-top:10px;
-    padding-bottom:10px;
+    padding-top:3.5vh;
+    padding-bottom:4vh;
 `;
 
 export const LoginForm = styled.div`

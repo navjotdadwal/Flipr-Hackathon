@@ -9,15 +9,6 @@ import {
 import { StoreContext } from '../../store/globalStore';
 
 
-
-const handleEmployeeClick=()=> {
-  
-}
-
-const handleAdminClick=()=> {
-  
-}
-
 const handleSubmit=()=> {
   
 }
@@ -45,14 +36,6 @@ const Form = props => (
  <div>
    <FormInput description="Username" placeholder="Enter your username" type="text" />
    <FormInput description="Password" placeholder="Enter your password" type="password"/>
-   <FormRadio>
-      <div>
-        <input type="radio" value="Admin" name="type" required onClick={handleAdminClick}/> Admin
-      </div>
-      <div>
-        <input type="radio" value="Employee" name="type" required onClick={handleEmployeeClick}/> Employee
-      </div>
-   </FormRadio> 
    <FormButton title="Log in"/>
  </div>
 );

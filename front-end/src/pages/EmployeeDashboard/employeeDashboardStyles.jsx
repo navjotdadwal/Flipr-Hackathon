@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const ButtonComponent = styled.div`
     float : right;
+    margin-top : 1.2rem;
     margin-right : 5vw;
     button {
         font-size: 18px;
@@ -183,4 +184,16 @@ export const RowSelectComponent = styled.div`
         background-color: rgba(255, 255, 255, 0.2);
       }
       
+`;
+
+export const Content = styled.div`
+   margin:auto;
+   margin-top:120px;
+   margin-left : 5vw;
+   padding-bottom: 20px;
+`;
+
+export const RowsComponent = styled.div`
+   display:flex;
+   flex-direction: row;
 `;

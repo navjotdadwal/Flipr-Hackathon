@@ -7,6 +7,17 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { Link } from '@mui/material';
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+import StatisticsCard from '../StatisticsCard/statisticsCard';
+import StatisticsLargeCard from '../StatisticsLargeCard/statisticsLargeCard';
+import {
+    Content,
+    RowsComponent
+} from './employeeTableStyles.jsx';
+import StatisticsCardPopup from '../StatisticsCardPopup/statisticsCardPopup';
+import StatisticsLargeCardPopup from '../StatisticsLargeCardPopup/statisticsLargeCardPopup';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -48,6 +59,52 @@ const rows = [
 ];
 
 export default function CustomizedTables() {
+    const initial_data=[
+        {
+          "id": "stylus",
+          "label": "stylus",
+          "value": 211,
+          "color": "hsl(4, 70%, 50%)"
+        },
+        {
+          "id": "javascript",
+          "label": "javascript",
+          "value": 343,
+          "color": "hsl(356, 70%, 50%)"
+        },
+        {
+          "id": "erlang",
+          "label": "erlang",
+          "value": 93,
+          "color": "hsl(84, 70%, 50%)"
+        },
+        {
+          "id": "hack",
+          "label": "hack",
+          "value": 378,
+          "color": "hsl(68, 70%, 50%)"
+        },
+        {
+          "id": "css",
+          "label": "css",
+          "value": 509,
+          "color": "hsl(8, 70%, 50%)"
+        }
+      ]
+      var init_data = [
+        {
+          "country": "Breaks",
+          "hot dog": 135
+        },
+        {
+          "country": "Work Tasks",
+          "hot dog": 162
+        },
+        {
+          "country": "Meetings",
+          "hot dog": 51
+        }
+      ]
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
@@ -65,7 +122,29 @@ export default function CustomizedTables() {
           {rows.map((row) => (
             <StyledTableRow key={row.name}>
               <StyledTableCell component="th" scope="row">
-                {row.name}
+                <Popup trigger={<h3 style={{cursor : 'pointer'}}> {row.name} </h3>} modal>
+                    <Content>
+                        <RowsComponent>
+                            {
+                            <div style={{marginRight: '5px'}}>
+                                <StatisticsCardPopup head="Current Date Analysis" data={initial_data}/>
+                            </div>
+                            }
+                            {
+                            <div style={{marginLeft: '5px'}}>
+                                <StatisticsCardPopup head="Previous Date Analysis" data={initial_data}/>
+                            </div>
+                            }
+                        </RowsComponent>
+                        <RowsComponent>
+                            {
+                            <div style={{marginTop: '15px'}}>
+                                <StatisticsLargeCardPopup head="Weekly Data Analysis" data={init_data}/>
+                            </div>
+                            }
+                        </RowsComponent>
+                    </Content>
+                </Popup>
               </StyledTableCell>
               <StyledTableCell align="right">{row.mailID}</StyledTableCell>
               <StyledTableCell align="right">{row.contactNumber}</StyledTableCell>

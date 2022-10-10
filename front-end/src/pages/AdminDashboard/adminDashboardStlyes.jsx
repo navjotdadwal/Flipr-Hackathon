@@ -8,6 +8,8 @@ export const OuterComponent = styled.div`
 
 export const ButtonComponent = styled.div`
     float : right;
+    margin-top : 2rem;
+    margin-bottom : 1.5rem;
     margin-right : 5vw;
     button {
         font-size: 18px;
@@ -23,6 +25,7 @@ export const ButtonComponent = styled.div`
 
 export const Header = styled.div`
     margin-left : 5vw;
+    width : fit-content;
     margin-top : 2rem;
     h1 {
         font-size: 28px;
